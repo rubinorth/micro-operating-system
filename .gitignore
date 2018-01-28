@@ -1,0 +1,6 @@
+#idea ignore
+.idea/*
+
+#clion ignore
+cmake-build-debug/*
+CMakeLists.txt
