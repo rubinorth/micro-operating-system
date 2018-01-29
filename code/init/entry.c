@@ -4,11 +4,14 @@
  */
 
 #include "console.h"
+#include "debug.h"
 
 int kern_entry()
 {
+	init_debug();
 	console_clear();
-	console_write_color("Hello, my kernel!!!\n", rc_black, rc_green);
+	printk_color(rc_black, rc_green, "Hello, my kernel!!!\n");
+	panic("test");
 	
 	return 0;
 }
