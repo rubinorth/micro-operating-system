@@ -50,9 +50,9 @@ dd MBOOT_CHECKSUM       ; 检测数值，其含义在定义处
 
 start:
 	cli  			 ; 此时还没有设置好保护模式的中断处理，要关闭中断
-				 ; 所以必须关闭中断
-	mov esp, STACK_TOP  	 ; 设置内核栈地址
-	mov ebp, 0 		 ; 帧指针修改为 0
+					 ; 所以必须关闭中断
+	mov esp, STACK_TOP  	 ; 设置内核栈地址，esp是栈顶指针，一般保持不变
+	mov ebp, 0 		 ; 帧指针修改为 0，ebp也是栈顶指针，随着栈的大小不断变化
 	and esp, 0FFFFFFF0H	 ; 栈地址按照16字节对齐
 	mov [glb_mboot_ptr], ebx ; 将 ebx 中存储的指针存入全局变量
 	call kern_entry		 ; 调用内核入口函数
