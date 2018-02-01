@@ -11,6 +11,7 @@
 #include "pmm.h"
 #include "vmm.h"
 #include "string.h"
+#include "heap.h"
 
 // 内核初始化函数
 void kern_init();
@@ -66,7 +67,7 @@ __attribute__((section(".init.text"))) void kern_entry()
 	kern_init();
 }
 
-int kern_init()
+void kern_init()
 {
 	init_debug();
 	init_gdt();
