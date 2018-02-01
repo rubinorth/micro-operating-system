@@ -1,12 +1,8 @@
 # micro-operating-system
 一个简单的操作系统原型
 
-源代码结构如下
+参考的是知乎上的一个回答：
+写一个操作系统内核有多难？大概的内容、步骤是什么？ - 浅墨的回答 - 知乎
+https://www.zhihu.com/question/22463820/answer/22394667
 
-└─code			
-    ├─boot		内核加载入口，一切从这里开始
-    ├─drivers   接口实现
-    ├─include   接口定义
-    ├─init		内核加载函数
-    ├─libs      工具函数
-    └─scripts   脚本文件
+目前代码仍有bug
